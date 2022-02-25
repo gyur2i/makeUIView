@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="controlView" customModule="makeUiView" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="axk-bU-fI9" customClass="controlView" customModule="makeUiView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bS9-Ix-Gw9">
+                    <rect key="frame" x="0.0" y="44" width="414" height="233"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bS9-Ix-Gw9" secondAttribute="height" multiplier="414:233" id="aL5-Dc-yLr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vt-sl-3cb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="233"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNj-Kg-Mw5">
+                            <rect key="frame" x="18" y="194" width="388" height="31"/>
+                            <subviews>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BYH-Ni-czy">
+                                    <rect key="frame" x="-2" y="0.0" width="353" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31" id="QcR-nR-5Fk"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="slPlay:" destination="-1" eventType="valueChanged" id="IyO-ya-B02"/>
+                                    </connections>
+                                </slider>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKj-8A-MKi">
+                                    <rect key="frame" x="349" y="0.0" width="39" height="31"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system" title=""/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="BYH-Ni-czy" firstAttribute="width" secondItem="VNj-Kg-Mw5" secondAttribute="width" multiplier="0.9" id="294-7e-JQx"/>
+                                <constraint firstItem="EKj-8A-MKi" firstAttribute="width" secondItem="VNj-Kg-Mw5" secondAttribute="width" multiplier="0.1" id="rHg-kT-oEj"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottomMargin" secondItem="VNj-Kg-Mw5" secondAttribute="bottom" id="7Qh-yp-vJm"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="VNj-Kg-Mw5" secondAttribute="trailing" id="8li-8g-12s"/>
+                        <constraint firstAttribute="width" secondItem="9Vt-sl-3cb" secondAttribute="height" multiplier="414:233" id="Kzl-ut-rm2"/>
+                        <constraint firstItem="VNj-Kg-Mw5" firstAttribute="leading" secondItem="9Vt-sl-3cb" secondAttribute="leadingMargin" constant="10" id="W4F-c2-b84"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="OZL-Wj-wcI"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="9Vt-sl-3cb" firstAttribute="trailing" secondItem="OZL-Wj-wcI" secondAttribute="trailing" id="54U-V2-hWT"/>
+                <constraint firstItem="bS9-Ix-Gw9" firstAttribute="trailing" secondItem="OZL-Wj-wcI" secondAttribute="trailing" id="AtA-Xr-VXA"/>
+                <constraint firstItem="bS9-Ix-Gw9" firstAttribute="top" secondItem="OZL-Wj-wcI" secondAttribute="top" id="Cqu-gQ-b2E"/>
+                <constraint firstItem="bS9-Ix-Gw9" firstAttribute="leading" secondItem="OZL-Wj-wcI" secondAttribute="leading" id="K2a-d1-4gV"/>
+                <constraint firstItem="9Vt-sl-3cb" firstAttribute="top" secondItem="OZL-Wj-wcI" secondAttribute="top" id="szI-x9-7hi"/>
+                <constraint firstItem="9Vt-sl-3cb" firstAttribute="leading" secondItem="OZL-Wj-wcI" secondAttribute="leading" id="ua7-Ah-IFW"/>
+            </constraints>
+            <connections>
+                <outlet property="btnFullScreen" destination="EKj-8A-MKi" id="4d7-7L-LQQ"/>
+                <outlet property="playView" destination="9Vt-sl-3cb" id="SKQ-hR-HPm"/>
+                <outlet property="slProgress" destination="BYH-Ni-czy" id="8fX-BS-X1m"/>
+                <outlet property="testView" destination="9Vt-sl-3cb" id="WAt-hp-8Pj"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="46"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
